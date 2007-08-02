@@ -9,7 +9,7 @@ our $logger = DJabberd::Log->get_logger;
 use Storable qw(nfreeze thaw);
 
 use vars qw($VERSION);
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 =head1 NAME
 
@@ -42,7 +42,11 @@ So you want offline storage - well add this to djabberd.conf:
 Parameter Database specifies the sqlite database file to use, and Types is a list of Stanza
 types that will be collected.  This should really only be Message - think really hard before
 you ad IQ to the list.
- 
+
+Also - it is extremely IMPORTANT as Edward Rudd pointed out - this Plugin MUST be the last
+in the delivery chain, as it assumes that if S2S and Local haven't dealt with it, then the
+JID in question is offline.
+
 
 =head1 AUTHOR
 

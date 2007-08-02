@@ -69,6 +69,10 @@ Parameter Database specifies the sqlite database file to use, and Types is a lis
 types that will be collected.  This should really only be Message - think really hard before
 you ad IQ to the list.
 
+Also - it is extremely IMPORTANT as Edward Rudd pointed out - this Plugin MUST be the last
+in the delivery chain, as it assumes that if S2S and Local haven't dealt with it, then the
+JID in question is offline.
+
 
 Cheers - Piers Harding - R/2 R/3 BASIS, IFACE, JAPH, whatever ...
 
