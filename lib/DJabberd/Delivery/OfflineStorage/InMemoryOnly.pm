@@ -5,7 +5,7 @@ use warnings;
 #use Data::Dumper;
 
 use vars qw($VERSION);
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 
 our $logger = DJabberd::Log->get_logger();
@@ -52,7 +52,7 @@ sub store_offline_message {
     my $id = $self->{'offline_id'}++;
     $logger->info("InMemoryOnly OfflineStorage store for: $user/$id");
     $self->{'offline'}{$user} ||= {};
-    $self->{'offline'}{$id} = {'packet' => $packet, 'jid' => $user};
+    $self->{'offline'}{$id} = {'id' => $id, 'packet' => $packet, 'jid' => $user};
     $self->{'offline'}{$user}{$id} = 1;
 }
 
