@@ -5,7 +5,7 @@ use warnings;
 use DBI;
 
 use vars qw($VERSION);
-$VERSION = '0.02';
+$VERSION = '0.04';
 
 our $logger = DJabberd::Log->get_logger();
 
